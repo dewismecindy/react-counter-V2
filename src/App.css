@@ -1,209 +1,84 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 header {
-  height: 100px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid lightgrey;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
-  padding-left: 40px;
+  gap: 40px;
+  margin: 35px;
+}
+.icon {
+  color: #5c48d3;
 }
 h1 {
   font-size: 48px;
-  margin: 0 60px;
 }
+
 main {
-  height: calc(100vh - 180px);
+  font-family: "Montserrat", sans-serif;
+}
+
+.button {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.button input {
+  font-family: "Montserrat", sans-serif;
+  background-color: #5c48d3;
+  font-size: 32px;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+.divCounters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+}
+.counters {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 40px;
+  margin: 40px auto;
 }
-.counter {
+
+.couterState {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+  background-color: #5c48d3;
+  color: white;
+  border-radius: 5px;
+}
+
+.resetAlign {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-.counter > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.counter p {
-  font-size: 80px;
-  height: 100px;
-}
-.counter p,
-.reset {
+
+.resetButton {
+  font-family: "Montserrat", sans-serif;
   background-color: #5c48d3;
-  border: 1px solid #e5e5e5;
+  font-size: 20px;
   color: white;
-  width: 100px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.counter > div > div {
-  margin: 0 20px;
-}
-.minus,
-.plus {
-  width: 80px;
-}
-.reset {
-  background-color: #5c47d2;
-  color: white;
-  height: 50px;
-  width: 100px;
-  border-radius: 20%;
-  margin-top: 70px;
-  font-size: 25px;
-}
-footer {
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.descriptionFooter {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.addCounter {
-  background-color: #5c47d2;
-  color: white;
-  height: 80px;
-  width: 150px;
-  border-radius: 20%;
-  margin-top: 70px;
-  font-size: 25px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
 }

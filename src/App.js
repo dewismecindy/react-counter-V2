@@ -1,71 +1,64 @@
-import "./App.css";
 import { useState } from "react";
+import "./App.css";
+import Counter from "./components/Counter";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faCalculator,
-  faMinus,
+  faStopwatch,
   faPlus,
+  faMinus,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Counter from "./components/Counter";
-import AddCounter from "./components/AddCounter";
 
-library.add(faCalculator, faMinus, faPlus);
+library.add(faStopwatch, faPlus, faMinus);
 
 function App() {
-  const [counter, setCounter] = useState(0);
-  /*  Je créer un state AddCounter pour ajouter les compteurs supplémentaires :)  */
-  const [addCounter, setAddCounter] = useState(1);
+  const [counter, setCounter] = useState([0]);
+
   return (
     <div className="App">
       <Header />
-      <AddCounter
-        state={AddCounter}
-        setState={setAddCounter}
-        className="addCounter"
-      >
-        Add Counter
-      </AddCounter>
-
       <main>
-        <div className="counter">
-          <div>
-            <div
-              className="minus"
+        <section className="button">
+          {counter.length < 3 && (
+            <input
+              type="submit"
+              value="Add counter"
               onClick={() => {
-                setCounter(counter - 1);
+                const counterReapeat2 = [...counter];
+                counterReapeat2.push(0);
+                setCounter(counterReapeat2);
               }}
-            >
-              {counter > 0 && (
-                <FontAwesomeIcon icon="fa-solid fa-minus" size="4x" />
-              )}
-            </div>
-            <p>{counter}</p>
+            />
+          )}
 
-            <div
-              className="plus"
+          {counter.length > 2 && (
+            <input
+              type="submit"
+              value="Reset"
               onClick={() => {
-                setCounter(counter + 1);
+                const counterReapeat2 = [...counter];
+                for (let i = 0; i < counterReapeat2.length; i++) {
+                  counterReapeat2.pop();
+                }
+                setCounter(counterReapeat2);
               }}
-            >
-              {counter < 10 && (
-                <FontAwesomeIcon icon="fa-solid fa-plus" size="4x" />
-              )}
-            </div>
+            />
+          )}
+        </section>
+        <section>
+          <div className="counters">
+            {counter.map((element, index) => {
+              return (
+                <Counter
+                  index={index}
+                  counter={counter}
+                  setCounter={setCounter}
+                />
+              );
+            })}
           </div>
-          <button
-            className="reset"
-            onClick={() => {
-              setCounter(0);
-            }}
-          >
-            Reset
-          </button>
-        </div>
+        </section>
       </main>
-      <Footer />
     </div>
   );
 }
